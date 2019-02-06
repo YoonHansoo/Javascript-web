@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li>JavaScript</li>
+</ol>
+ 
+<script>
+   var lis = document.querySelectorAll('.active');
+	
+	for(var li in lis){
+		lis[li].style.color = 'blue';
+		
+		//$('$active').css('color', 'red').css('textDecoration', 'underline');  
+		//제이쿼리 메서드가 리턴하는 값이 객체를 리턴하기 때문에 제이쿼리 메서드라면 계속해서 덧붙힐 수 있음(Chaining)
+		
+		/*
+		ocument.getElementById : 리턴 데이터 타입은 HTMLLIELement
+		document.getElementsByTagName : 리턴 데이터 타입은 HTMLCollection -> 유사배열
+		
+		*/
+	}
+</script>
+</body>
+</html>

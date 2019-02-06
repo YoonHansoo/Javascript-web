@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	ul>
+    <li class="marked">html</li>
+    <li>css</li>
+    <li id="active">JavaScript
+        <ul>
+            <li>JavaScript Core</li>
+            <li class="marked">DOM</li>
+            <li class="marked">BOM</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var list = document.getElementsByClassName('marked'); //document 전체에서 marked를 조회함.
+    console.group('document');
+    for(var i=0; i<list.length; i++){
+        console.log(list[i].textContent);
+    }
+    console.groupEnd();
+     
+    console.group('active');
+    var active = document.getElementById('active');       //active로 검색범위를 좁힌 후에 marked를 찾음
+    var list = active.getElementsByClassName('marked');
+    for(var i=0; i<list.length; i++){
+        console.log(list[i].textContent);
+    }
+    console.groupEnd();
+	 		//결론
+		 	//문서내의 모든 엘리먼트들에서 조회하는 것과
+ 			//범위를 정해두고 해당 범위 안에서 원하는 엘리먼트를 조회하는 것.
+</script>
+	
+</body>
+</html>
