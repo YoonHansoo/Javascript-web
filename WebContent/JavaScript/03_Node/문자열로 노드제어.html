@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!--
+	1) innerHTML/ outerHTML
+:innerHTML는 문자열로 자식 노드를 만들 수 있는 기능을 제공한다. 또한 자식 노드의 값을 읽어올 수도 있다. 
+: 값을 읽을때는 HTML 코드를 포함한!! 문자열을 리턴, 값 변경시 HTML의 코드빼고!! 추가.
+
+2) innerText/outerText
+: 값을 읽을 때는 HTML 코드를 제외한!! 문자열을 리턴하고, 값을 변경시 코드를 그대로!!! 추가.
+	
+	
+outerHTML/outerText
+=>outerHTML은 선택한 엘리먼트를 포함해서 처리된다.
+	
+insertAdjacentHTML()
+: 좀 더 정교하게 문자열을 이용해서 노드를 변경하고 싶을 때
+	 target에 어느부분에 insert할 지 좀 더 세분하게 컨트롤 가능함
+	
+	-->
+<ul id="target">
+    <li>CSS</li>
+</ul>
+<input type="button" onclick="beforebegin();" value="beforebegin" />
+<input type="button" onclick="afterbegin();" value="afterbegin" />
+<input type="button" onclick="beforeend();" value="beforeend" />
+<input type="button" onclick="afterend();" value="afterend" />
+<script>
+    function beforebegin(){
+        var target = document.getElementById('target');
+        target.insertAdjacentHTML('beforebegin','<h1>Client Side</h1>');
+    }
+    function afterbegin(){
+        var target = document.getElementById('target');
+        target.insertAdjacentHTML('afterbegin','<li>HTML</li>');
+    }
+    function beforeend(){
+        var target = document.getElementById('target');
+        target.insertAdjacentHTML('beforeend','<li>JavaScript</li>');
+    }
+    function afterend(){
+        var target = document.getElementById('target');
+        target.insertAdjacentHTML('afterend','<h1>Server Side</h1>');
+    }
+</script>	
+</body>
+</html>

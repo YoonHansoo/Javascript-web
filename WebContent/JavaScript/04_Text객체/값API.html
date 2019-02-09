@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul>
+    <li id="target">html</li> 
+    <li>css</li>
+    <li>JavaScript</li>
+</ul>
+<script>
+    var t = document.getElementById('target').firstChild;
+    console.log(t); //이렇게 하면 textNode객체로 가져오는 것 찍어보면 " "이 붙어서 출력된다.
+	console.log(t.data);
+</script>	
+</body>
+</html>

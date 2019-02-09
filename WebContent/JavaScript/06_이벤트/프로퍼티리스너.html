@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!--
+	프로퍼티 리스너 방식은 이벤트 대상에 해당하는 객체의 프로퍼티로 이벤트를 등록하는 방식이다.
+	 인라인 방식에 비해서 HTML과 JavaScript를 분리할 수 있다는 점에서 선호되는 방식이지만
+	 addEventListener 방식을 추천
+	 
+	 ex)
+	 <script>
+    var t = document.getElementById('target');
+    t.onclick = function(){
+        alert('Hello world');
+    }
+    </script>
+    
+    이벤트 객체
+    :이벤트가 실행된 맥락의 정보가 필요할 때는 이벤트 객체를 사용한다. 
+    이벤트 객체는 이벤트가 실행될 때 이벤트 핸들러의 인자로 전달된다. 
+    
+    
+    ex)
+    <body>
+    <input type="button" id="target" value="button" />
+	<script>	
+    var t = document.getElementById('target');
+    t.onclick = function(event){
+        alert('Hello world, '+event.target.value)  event.target으로 객체를 정확히 찾음
+    }
+	</script>
+    
+    
+    ie8이하 버전일 때
+    
+    ex)
+    <input type="button" id="target" value="button" />
+	<script>
+    var t = document.getElementById('target');
+    t.onclick = function(event){
+        var event = event || window.event;     ||의 뜻: event가 없으면 window.event로 해라
+        var target = event.target || event.srcElement;
+        alert('Hello world, '+target.value)
+    }
+	</script>
+    
+    
+    
+    
+
+	
+	-->
+</body>
+</html>

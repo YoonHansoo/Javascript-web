@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!--
+	우선 엘리먼트의 크기를 알아내는 방법
+		: getBoundingClientRect()
+	ex)
+	<script>
+	var t = document.getElementById('target'); 
+	console.log(t.getBoundingClientRect());  
+	</script>
+	
+	
+	 엘리먼트의 위치를 의미하는 top, right의 값을 통해서 기준이 그 부모가 아니라 body라는 것을 알 수 있다. 
+	 그리고 이를 명시적으로 확인할 수 있는 방법은 offsetParent 속성을 호출하는 것이다. 
+	 만약 부모 중 CSS position의 값이 static인 td, th, table 엘리먼트가 있다면 이 엘리먼트가 offsetParent가 된다. 
+	 
+	 
+	 viewport란?
+	 :뷰포트는 문서의 내용 중 사용자에게 보여주는 영역을 의미한다.
+	 
+	 문서의 좌표를 알고 싶을 땐?
+	 ex)
+	 setInterval(function(){
+    console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset, 'document y:', t.getBoundingClientRect().top+window.pageYOffset);
+	}, 1000)
+	 
+	 
+	문서의 스크롤 값을 변경하고 싶을 때
+	:    window.scrollTo(0, 1000); 스크롤의 y값을 1000으로 변경
+	
+	
+	스크린의 크기는 모니터의 크기와 브라우저 뷰포트의 크기가 있다. 이를 알아내는 방법은 아래와 같다.
+	console.log('window.innerWidth:', window.innerWidth, 'window.innerHeight:', window.innerHeight); //뷰포트 크기
+	console.log('screen.width:', screen.width, 'screen.height:', screen.height); //사용자 모니터의 크기
+	
+	-->
+  <script>
+   console.log('window.innerWidth:', window.innerWidth, 'window.innerHeight:', window.innerHeight);
+	console.log('screen.width:', screen.width, 'screen.height:', screen.height);
+    
+</script>
+	
+</body>
+</html>

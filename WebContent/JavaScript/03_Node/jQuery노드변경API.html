@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <!--
+	 
+	추가와 관련된 메서드
+		1.before()  선택한 target 앞에 추가
+	 	2.prepend() 선택한 target 태그 안쪽 앞에 추가
+	 	3.append()  선택한 target 태그 안쪽 뒤에 추가
+	 	4.after()   선택한 target 뒤에 추가 
+		ex) target.before("<div>alphasoo</div>");
+	
+	제거와 관련된 메서드
+		1.remove(); 선택한 Element를 삭제
+		2.empty(); 선택한 Element의 text Node를 삭제
+		
+	
+	바꾸기와 관련된 메서드
+		1 바꿀내용.replaceAll("target");
+		2.target.replaceWith("바꿀내용");
+	
+	복사
+	-replceAll 사용
+       $('#btn1').click(function(){
+        $('#source').clone().replaceAll('#target1');
+    })
+    
+    --replaceWith 사용
+      $('#target1').repaceWith($('#souce').clone());
+      
+      
+     이동
+      $('#target1').append($('#source'));
+       -->
+</body>
+</html>
