@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	   <style>
+            html{border:5px solid red;padding:30px;}
+            body{border:5px solid green;padding:30px;}
+            fieldset{border:5px solid blue;padding:30px;}
+            input{border:5px solid black;padding:30px;}
+        </style>
+</head>
+<body>
+	 <fieldset>
+            <legend>event propagation</legend>
+            <input type="button" id="target" value="target">          
+        </fieldset>
+        <script>
+        function handler(event){
+            var phases = ['capturing', 'target', 'bubbling']
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+        }
+			
+		document.getElementById('target').addEventListener('click',handler,true);	
+		
+        document.getElementById('target').addEventListener('click', handler, true);
+        document.querySelector('fieldset').addEventListener('click', handler, true);
+        document.querySelector('body').addEventListener('click', handler, true);
+        document.querySelector('html').addEventListener('click', handler, true);
+			
+			
+		document.getElementById('target').addEventListener('click', handler, false);
+		document.querySelector('fieldset').addEventListener('click', handler, false);
+		document.querySelector('body').addEventListener('click', handler, false);
+		document.querySelector('html').addEventListener('click', handler, false);
+			/*
+			addEventListener속성에 true를 주면 캡쳐링 방식이 되서 부모에서 자식으로 퍼져나가고
+			flase 혹은 값을 주지 않을 경우 버블링 형식으로 자식에서 부모로 번져나간다.
+			
+			정지하는 법 
+			stopPropagation()메서드를 사용.
+			*/
+
+        </script>
+	
+</body>
+</html>
